@@ -1,0 +1,9 @@
+mkdir build && cd build
+cmake ..
+cmake --build . -j
+
+# 终端1
+./tiny_rpc_server 9000
+
+# 终端2
+./tiny_rpc_client 127.0.0.1 9000

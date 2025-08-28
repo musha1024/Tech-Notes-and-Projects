@@ -1,0 +1,12 @@
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  google-*,
+  modernize-*,
+  performance-*,
+  readability-*
+
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+FormatStyle:     google
