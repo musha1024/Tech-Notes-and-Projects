@@ -1,0 +1,219 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "timestamp": "20250904-081918",
+  "cases": [
+    {
+      "name": "ping",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/ping"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "11",
+          "Connection": "close"
+        },
+        "body": "{\"ok\":true}",
+        "elapsed_ms": 2
+      },
+      "pass": true,
+      "note": "health check"
+    },
+    {
+      "name": "set text",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8080/set",
+        "json": {
+          "key": "user:1",
+          "value": "Alice",
+          "ttl": 60
+        }
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "11",
+          "Connection": "close"
+        },
+        "body": "{\"ok\":true}",
+        "elapsed_ms": 1
+      },
+      "pass": true,
+      "note": "SETEX 60s"
+    },
+    {
+      "name": "get text",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/get?key=user%3A1"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "32",
+          "Connection": "close"
+        },
+        "body": "{\"key\":\"user:1\",\"value\":\"Alice\"}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "GET should return Alice"
+    },
+    {
+      "name": "exists true",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/exists?key=user%3A1"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "15",
+          "Connection": "close"
+        },
+        "body": "{\"exists\":true}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "EXISTS(user:1)=true"
+    },
+    {
+      "name": "incr +2",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8080/incr",
+        "json": {
+          "key": "cnt:unit",
+          "by": 2
+        }
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "9",
+          "Connection": "close"
+        },
+        "body": "{\"new\":5}",
+        "elapsed_ms": 1
+      },
+      "pass": true,
+      "note": "INCRBY 2"
+    },
+    {
+      "name": "incr +1",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8080/incr",
+        "json": {
+          "key": "cnt:unit"
+        }
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "9",
+          "Connection": "close"
+        },
+        "body": "{\"new\":6}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "INCR default"
+    },
+    {
+      "name": "get missing",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/get?key=no%3Asuch%3Akey"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "34",
+          "Connection": "close"
+        },
+        "body": "{\"key\":\"no:such:key\",\"value\":null}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "GET null"
+    },
+    {
+      "name": "del text",
+      "request": {
+        "method": "DELETE",
+        "url": "http://127.0.0.1:8080/del?key=user%3A1"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "13",
+          "Connection": "close"
+        },
+        "body": "{\"deleted\":1}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "DEL user:1"
+    },
+    {
+      "name": "del again",
+      "request": {
+        "method": "DELETE",
+        "url": "http://127.0.0.1:8080/del?key=user%3A1"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "13",
+          "Connection": "close"
+        },
+        "body": "{\"deleted\":0}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "DEL again -> 0"
+    },
+    {
+      "name": "invalid key",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8080/get?key=bad%20key%20with%20space"
+      },
+      "response": {
+        "ok": false,
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "34",
+          "Connection": "close"
+        },
+        "body": "{\"error\":\"invalid or missing key\"}",
+        "elapsed_ms": 0
+      },
+      "pass": true,
+      "note": "Key fails whitelist -> 400"
+    }
+  ],
+  "pass_rate": 1.0
+}

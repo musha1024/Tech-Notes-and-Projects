@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/redis_microservice.dir/src/main.cpp.o -o redis_microservice  -lpthread 

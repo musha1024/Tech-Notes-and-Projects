@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/build",
+  "command": "/usr/bin/c++  -I/usr/include/mysql -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/third_party -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/include -std=gnu++1z -fPIE -o CMakeFiles/mysql_microservice.dir/src/main.cpp.o -c /mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/main.cpp",
+  "file": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/main.cpp",
+  "output": "CMakeFiles/mysql_microservice.dir/src/main.cpp.o"
+},
+{
+  "directory": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/build",
+  "command": "/usr/bin/c++  -I/usr/include/mysql -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/third_party -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/include -std=gnu++1z -fPIE -o CMakeFiles/mysql_microservice.dir/src/config.cpp.o -c /mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/config.cpp",
+  "file": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/config.cpp",
+  "output": "CMakeFiles/mysql_microservice.dir/src/config.cpp.o"
+},
+{
+  "directory": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/build",
+  "command": "/usr/bin/c++  -I/usr/include/mysql -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/third_party -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/include -std=gnu++1z -fPIE -o CMakeFiles/mysql_microservice.dir/src/mysql_pool.cpp.o -c /mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/mysql_pool.cpp",
+  "file": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/mysql_pool.cpp",
+  "output": "CMakeFiles/mysql_microservice.dir/src/mysql_pool.cpp.o"
+},
+{
+  "directory": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/build",
+  "command": "/usr/bin/c++  -I/usr/include/mysql -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/third_party -I/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/include -std=gnu++1z -fPIE -o CMakeFiles/mysql_microservice.dir/src/handlers.cpp.o -c /mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/handlers.cpp",
+  "file": "/mnt/sda/tmh/self_build/cpp-microservice/mysql_microservice_modular/src/handlers.cpp",
+  "output": "CMakeFiles/mysql_microservice.dir/src/handlers.cpp.o"
+}
+]
