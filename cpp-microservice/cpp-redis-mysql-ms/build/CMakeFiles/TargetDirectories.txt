@@ -1,0 +1,3 @@
+/mnt/sda/tmh/self_build/cpp-microservice/cpp-redis-mysql-ms/build/CMakeFiles/redis_mysql_ms.dir
+/mnt/sda/tmh/self_build/cpp-microservice/cpp-redis-mysql-ms/build/CMakeFiles/edit_cache.dir
+/mnt/sda/tmh/self_build/cpp-microservice/cpp-redis-mysql-ms/build/CMakeFiles/rebuild_cache.dir
