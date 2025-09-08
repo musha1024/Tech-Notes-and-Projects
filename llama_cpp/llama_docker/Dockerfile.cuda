@@ -1,0 +1,19 @@
+FROM docker.m.daocloud.io/nvidia/cuda:11.8.0-devel-ubuntu22.04
+ARG DEBIAN_FRONTEND=noninteractive
+ARG CUDA_ARCHS=86
+ARG LLAMA_COMMIT=master
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      git cmake build-essential pkg-config ca-certificates libcurl4-openssl-dev wget \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /opt
+RUN git clone https://github.com/ggml-org/llama.cpp && cd llama.cpp && \
+    if [ "$LLAMA_COMMIT" != "master" ]; then git checkout "$LLAMA_COMMIT"; fi && \
+    cmake -B build -S . -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=${CUDA_ARCHS} && \
+    cmake --build build -j && \
+    ln -s /opt/llama.cpp/build/bin/llama-cli /usr/local/bin/llama-cli && \
+    ln -s /opt/llama.cpp/build/bin/llama-server /usr/local/bin/llama-server
+ENV LLAMA_CACHE=/cache
+RUN mkdir -p /cache
+VOLUME ["/cache", "/models"]
+EXPOSE 8080
+CMD ["llama-server","-h"]
