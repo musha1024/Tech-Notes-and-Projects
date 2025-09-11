@@ -1,0 +1,5 @@
+{"text": "INFO Redis+MySQL 微服务：write through 缓存策略，健康检查正常。", "metadata": {"source": "data/raw/03_microservice.log", "chunk_id": 0}}
+{"text": "RAG 提示：良好的切块策略与重排能显著提高命中率；中文优先选 bge m3。", "metadata": {"source": "data/raw/02_rag_tips.md", "chunk_id": 0}}
+{"text": "这是一个用于中文 RAG 的最小可用仓库：bge m3 检索、bge reranker 重排、Qwen2.5 生成。", "metadata": {"source": "data/raw/00_readme.md", "chunk_id": 0}}
+{"text": "这是一个示例文档，用于测试 RAG 流程。", "metadata": {"source": "data/raw/example.txt", "chunk_id": 0}}
+{"text": "Git 常用：init/commit/push/merge/rebase。建议提交前本地跑单测与格式化。", "metadata": {"source": "data/raw/01_git.txt", "chunk_id": 0}}
