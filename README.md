@@ -1,4 +1,4 @@
-# self_build
+# Tech-Notes-and-Projects
 
 ## 📌 项目简介
 本仓库用于 **个人学习与实践记录**，主要包含：
