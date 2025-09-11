@@ -42,7 +42,7 @@
 - 配置 CUDA / GPU 加速环境  
 - 编译与运行 llama.cpp 推理的流程  
 
-### 📖 RAG 本地实现 (`rag_qwen_bge_compare_v3`)
+### 📖 RAG 本地实现 (`rag_qwen_bge_compare`)
 - 对比 **Qwen 模型** 与 **BGE 模型** 在 RAG（Retrieval-Augmented Generation）中的效果  
 - 实现向量检索、召回、生成回答的完整流程  
 - 提供 **Base 模式 vs RAG 模式** 的对比输出  
