@@ -11,34 +11,42 @@
 ---
 
 ## 📂 当前内容
+
 ### 🔧 CMake 常用操作
-- 常见 CMakeLists.txt 模板
-- 模块化项目组织方式
-- 常用编译 / 调试参数示例
+- 常见 CMakeLists.txt 模板  
+- 模块化项目组织方式  
+- 常用编译 / 调试参数示例  
 
 ### 🗄️ MySQL 微服务模板
-- 使用 C++ 封装的 MySQL 连接池
-- 简单接口
-- 基础的读写、更新、删除操作流程
+- 使用 C++ 封装的 MySQL 连接池  
+- 简单接口  
+- 基础的读写、更新、删除操作流程  
 
 ### ⚡ Redis 微服务模板
-- Redis 客户端与缓存读写示例
-- Write-through / Cache-aside 策略演示
-- 与 MySQL 组合的缓存更新逻辑
+- Redis 客户端与缓存读写示例  
+- Write-through / Cache-aside 策略演示  
+- 与 MySQL 组合的缓存更新逻辑  
 
 ### 🌱 Git 常用指令
-- 基础操作（clone / commit / push / pull）
-- 分支管理与合并示例
-- 常用问题与解决办法（如冲突处理、代理配置）
+- 基础操作（clone / commit / push / pull）  
+- 分支管理与合并示例  
+- 常用问题与解决办法（如冲突处理、代理配置）  
 
 ### 🔗 RPC 框架
-- 简单自研 RPC 框架雏形
-- 基于 Socket/HTTP 的调用流程
-- 与微服务示例结合
+- 简单自研 RPC 框架雏形  
+- 基于 Socket/HTTP 的调用流程  
+- 与微服务示例结合  
 
 ### 🐳 llama.cpp 基于 Docker 的部署
-- 从 Docker 拉取基础镜像
-- 配置 CUDA / GPU 加速环境
-- 编译与运行 llama.cpp 推理的流程
+- 从 Docker 拉取基础镜像  
+- 配置 CUDA / GPU 加速环境  
+- 编译与运行 llama.cpp 推理的流程  
+
+### 📖 RAG 本地实现 (`rag_qwen_bge_compare_v3`)
+- 对比 **Qwen 模型** 与 **BGE 模型** 在 RAG（Retrieval-Augmented Generation）中的效果  
+- 实现向量检索、召回、生成回答的完整流程  
+- 提供 **Base 模式 vs RAG 模式** 的对比输出  
+- 可扩展为本地知识库问答系统  
 
 ---
+
