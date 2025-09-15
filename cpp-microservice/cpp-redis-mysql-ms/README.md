@@ -49,7 +49,3 @@ pip install requests
 python python_test_client.py
 ```
 脚本包含：基本 CRUD、TTL 过期后的回源，以及**建表 + 指定表操作**示例。
-
-## 提示
-- 如果使用 MySQL 8.0 头文件，`my_bool` 已移除，代码内已做兼容宏定义。若你的环境仍报错，请安装 `libmysqlclient-dev` 对应版本。
-- HTTP 为极简版本，生产可换用成熟库并配合线程池、限流、熔断、指标与日志。

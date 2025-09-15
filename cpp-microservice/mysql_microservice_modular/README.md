@@ -1,7 +1,5 @@
 # C++ MySQL 微服务（模块化头文件版，防注入）
 
-更“标准”的目录结构：头/源分离、职责清晰、易扩展。功能同前（REST + MySQL 预处理语句）。
-
 ## 结构
 ```
 mysql_microservice_modular/
