@@ -49,4 +49,12 @@
 - 可扩展为本地知识库问答系统  
 
 ---
-
+### 🤖 Local Agent (Qwen2.5-7B-Instruct)
+- 基于本地 **Qwen2.5-7B-Instruct** 模型实现的极简 Agent 框架  
+- 支持 **ReAct 风格** 推理与工具调用  
+- 内置工具：
+  - `calculator`（安全计算器）
+  - `fs_search`（本地文件系统关键词检索）
+- 提供 **对话记忆** (BufferMemory)  
+- 可扩展：只需在 `tools/` 目录添加 Python 文件并实现 `register()` 即可集成新工具  
+- 输出清理：兼容 `Final:` / `最终:`，确保只返回最终答案而非冗长生成过程
