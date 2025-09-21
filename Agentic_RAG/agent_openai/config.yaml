@@ -1,0 +1,7 @@
+provider: openai
+model: gpt
+api_base:               # 可留空，使用默认；若走代理或兼容端点则填你的Base URL
+api_key:                # 建议留空，改用环境变量 OPENAI_API_KEY
+max_tokens: 1024
+temperature: 0.2
+top_p: 0.95

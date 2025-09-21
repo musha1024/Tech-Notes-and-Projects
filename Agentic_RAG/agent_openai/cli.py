@@ -13,7 +13,9 @@ def load_config():
 
 def make_agent():
     cfg = load_config()
-    llm = load_llm(
+    llm = load_llm(**cfg)
+# legacy local loading kept for backward compatibility
+# llm = load_llm(
         model_path=cfg.get("model_path"),
         device=cfg.get("device", "auto"),
         dtype=cfg.get("dtype", "auto"),

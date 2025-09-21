@@ -14,13 +14,36 @@ SYSTEM_PROMPT = """你是一个严谨的助手。你可以选择：
 Tool: <工具名>
 Args: {"k": "v"}
 
-工具会返回：
-Observation: <工具输出>
+收到 Observation 后继续思考，直到你能给出最终答案：
+最终: <给用户的最终答案>
+或
+Final: <给用户的最终答案>
 
-你可以多次调用工具。当你有了最终答案时，以如下格式结束：
-最终: <你的回答给用户>
-或者：
-Final: <你的回答给用户>
+严格要求：
+- 每一轮要么给出 Tool/Args，要么给出 最终:/Final:，不要两者混在同一轮。
+- Args 必须是合法 JSON。
+- 工具名只能从可用工具列表中选择。
+
+可用工具示例：
+- read_local_file(path, as_text=True, start=0, max_bytes=1024)
+- write_local_file(path, content, as_text=True, append=False)
+
+示例1：创建并写入文本
+思考: 需要创建文件并写入文本
+Tool: write_local_file
+Args: {"path": "/tmp/hello.txt", "content": "hello world", "as_text": true, "append": false}
+
+(收到 Observation 后)
+思考: 文件已写入，给出确认信息
+最终: 已创建 /tmp/hello.txt 并写入 11 个字符。
+
+示例2：读取文本文件前 100 字节
+思考: 需要读取文本
+Tool: read_local_file
+Args: {"path": "/tmp/hello.txt", "as_text": true, "start": 0, "max_bytes": 100}
+
+(收到 Observation 后)
+Final: 读取成功，已展示片段。
 """
 
 def discover_tools(registry: ToolRegistry):
