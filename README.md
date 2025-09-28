@@ -27,13 +27,13 @@
   - 与 MySQL 组合的缓存更新逻辑
 
 ### 3️⃣ C++ 网络与分布式
-- **RPC 框架雏形**
+- **RPC 框架雏形** (`/RPC/`)
   - 基于 Socket/HTTP 的调用流程
-  - 与微服务示例结合
-- **多客户端聊天室微服务**（🆕）
-  - 基于 TCP/epoll 的事件驱动模型
-  - 支持多客户端并发对话
-  - 简单广播 / 私聊功能
+- **C++ 微服务集合** (`/cpp-microservice/`)
+  - `cpp_chat_room`：基于 TCP/epoll 的多客户端聊天室（支持广播）
+  - `mysql_microservice_modular`：C++ MySQL 连接池
+  - `redis_microservice`：Redis 客户端与缓存策略
+  - `cpp-redis-mysql-ms`：Redis + MySQL 组合示例
 
 ### 4️⃣ LLM / RAG / Agent
 - **RAG 本地实现 (`rag_qwen_bge_compare`)**
