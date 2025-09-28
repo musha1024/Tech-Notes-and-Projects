@@ -1,62 +1,55 @@
 # Tech-Notes-and-Projects
 
-## 📌 项目简介
+## 📌 简介
 本仓库用于 **个人学习与实践记录**，主要包含：
-- 学习过程中整理的 **模板代码**
-- 常见问题与解决方法
-- 一些开发与实验性的实现
+- 常用开发模板与环境配置
+- C++/Python 微服务与分布式实验
+- LLM / RAG / Agent 相关实现
+- 学习过程中的常见问题与解决方案
 
-同时借助 **大语言模型 (LLM)** 辅助做规划与优化，使内容更系统化和可复用。仓库内容会持续更新。
+目标是逐步沉淀成一套 **可复用的知识库与项目模板**。
+
+---
+
+## 📂 内容目录
+
+### 1️⃣ 基础工具与模板
+- **CMake 模板**：模块化项目组织，常用编译/调试参数
+- **Git 指南**：clone / commit / push / pull，分支管理，冲突解决与代理配置
+
+### 2️⃣ 数据库与缓存微服务
+- **MySQL 微服务**
+  - C++ 封装 MySQL 连接池
+  - 基础 CRUD 接口
+- **Redis 微服务**
+  - Redis 客户端与缓存读写示例
+  - Write-through / Cache-aside 策略
+  - 与 MySQL 组合的缓存更新逻辑
+
+### 3️⃣ C++ 网络与分布式
+- **RPC 框架雏形**
+  - 基于 Socket/HTTP 的调用流程
+  - 与微服务示例结合
+- **多客户端聊天室微服务**（🆕）
+  - 基于 TCP/epoll 的事件驱动模型
+  - 支持多客户端并发对话
+  - 简单广播 / 私聊功能
+
+### 4️⃣ LLM / RAG / Agent
+- **RAG 本地实现 (`rag_qwen_bge_compare`)**
+  - Qwen vs BGE 模型在 RAG 中的对比
+  - 向量检索 + 召回 + 生成完整流程
+  - Base 模式 vs RAG 模式对比输出
+- **Local Agent (ChatGPT API)**
+  - 极简 ReAct 风格 Agent 框架
+  - 内置工具：计算器 / 本地文件搜索 / 文件读写
+  - 支持对话记忆与工具扩展
+
+### 5️⃣ 部署与实验环境
+- **llama.cpp with Docker**
+  - 从 Docker 拉取基础镜像
+  - 配置 CUDA / GPU 加速
+  - 编译与运行 llama.cpp 推理
 
 ---
 
-## 📂 当前内容
-
-### 🔧 CMake 常用操作
-- 常见 CMakeLists.txt 模板  
-- 模块化项目组织方式  
-- 常用编译 / 调试参数示例  
-
-### 🗄️ MySQL 微服务模板
-- 使用 C++ 封装的 MySQL 连接池  
-- 简单接口  
-- 基础的读写、更新、删除操作流程  
-
-### ⚡ Redis 微服务模板
-- Redis 客户端与缓存读写示例  
-- Write-through / Cache-aside 策略演示  
-- 与 MySQL 组合的缓存更新逻辑  
-
-### 🌱 Git 常用指令
-- 基础操作（clone / commit / push / pull）  
-- 分支管理与合并示例  
-- 常用问题与解决办法（如冲突处理、代理配置）  
-
-### 🔗 RPC 框架
-- 简单自研 RPC 框架雏形  
-- 基于 Socket/HTTP 的调用流程  
-- 与微服务示例结合  
-
-### 🐳 llama.cpp 基于 Docker 的部署
-- 从 Docker 拉取基础镜像  
-- 配置 CUDA / GPU 加速环境  
-- 编译与运行 llama.cpp 推理的流程  
-
-### 📖 RAG 本地实现 (`rag_qwen_bge_compare`)
-- 对比 **Qwen 模型** 与 **BGE 模型** 在 RAG（Retrieval-Augmented Generation）中的效果  
-- 实现向量检索、召回、生成回答的完整流程  
-- 提供 **Base 模式 vs RAG 模式** 的对比输出  
-- 可扩展为本地知识库问答系统  
-
----
-### 🤖 Local Agent (ChatGPT API)
-
-- 基于 **OpenAI ChatGPT API** 的极简 Agent 框架  
-- 支持 **ReAct 风格** 推理与工具调用  
-- 内置工具：
-  - `calculator`（安全计算器）
-  - `fs_search`（本地文件系统关键词检索）
-  - `read_local_file`（读取本地文件，支持文本/二进制）
-  - `write_local_file`（写入本地文件，支持覆盖/追加、base64 二进制）
-- 提供 **对话记忆** (BufferMemory)  
-- 可扩展：只需在 `tools/` 目录添加 Python 文件并实现 `register()` 即可集成新工具 
